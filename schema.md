@@ -59,8 +59,8 @@ type Author {
 }
 type User {
   _id: ID!
-  email: String!
-  books: [Book]!
+  username: String!
+  books: [Book]
 }
 ```
 
@@ -100,7 +100,7 @@ Using the online book lending store example again:
 type Mutation {
   borrowBooks(bookIds: [ID]!): BookUpdateResponse!
   returnBook(bookId: ID!): BookUpdateResponse!
-  login(email: String!, password: String!): User
+  login(username: String!, password: String!): User
 }
 
 type BookUpdateResponse {
@@ -112,11 +112,16 @@ type BookUpdateResponse {
 This `Mutation` type defines three available mutations for clients to execute: `borrowBooks`, `returnBook`, and `login`.
 - The `borrowBooks` mutation enables a logged-in user to borrow one or more `Book`s specified by an array of `bookIds`.
 - The `returnBook` mutation enables a logged-in user to return a book that they previously borrowed specified by a `bookId`.
-- The `login` mutation enables a user to log in by providing their email address and password.
+- The `login` mutation enables a user to log in by providing their username and password.
 
 The `BookUpdateResponse` is an Object Type that contains a `success` status, a corresponding `message`, and an array of `Book`s that were modified by the mutation. It's good practice for a mutation to return whatever objects it modifies so the requesting client can update its cache and UI without needing to make a following query.
 
+## Conclusion
+
 The GraphQL Schema tells our server which GraphQL **types and operations** it supports, but it **doesn't know where to obtain the data to respond to those operations**. For that, we need our **GraphQL Resolvers**. 
+
+Next resource: [GraphQL Resolvers]
 
 [GraphQL's built-in scalar types]: https://graphql.org/learn/schema/
 [How to Define Custom Scalar Types]: https://itnext.io/custom-scalars-in-graphql-9c26f43133f3
+[GraphQL Resolvers]: /resolvers.md
