@@ -135,7 +135,7 @@ query {
 
 Take a look at the "DOCS" tab on the right of Playground to see all the `Mutations` we can try.
 
-You'll notice that the `login` mutation takes in an `email` String input and a `password` String input as arguments. We define arguments as key-value pairs. Also, notice the value of the `login` mutation is `UserCredentials` instead of `User`. There are two extra fields, `token` and `loggedIn`, that we expect a `UserCredentials` type to have over a `User` type. 
+You'll notice that the `login` mutation takes in an `username` String input and a `password` String input as arguments. We define arguments as key-value pairs. Also, notice the value of the `login` mutation is `UserCredentials` instead of `User`. There are two extra fields, `token` and `loggedIn`, that we expect a `UserCredentials` type to have over a `User` type. 
 
 Let's try logging in the demo user with a `username` of `"demo"` and a `password` of `"password"` and returning `_id`, `username`, `token`, and `loggedIn` on the `UserCredentials` type:
 
