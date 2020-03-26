@@ -175,6 +175,39 @@ Then, let's use the `me` query to see information about the `loggedInUser` and w
 }
 ```
 
+The `me` query returns the `loggedInUser` that is identified through the `authorization` token. 
+
+Now, let's check out some more books using the `borrowBooks` mutation. Take a look at the `"DOCS"` tab for information on that. The mutation takes in an array of `bookIds`. Find some books you want to check out in the `books` query and put their `_id`'s in a variable called `"bookIds"` in the `Query Variables`:
+
+```json
+{
+  "bookIds": ["<book id 1", "<book id 2>"]
+}
+```
+
+Next, let's define a **named `mutation`** called `CheckOutBooks` that takes in the `$bookIds` variable and expect it to be an array of type `ID`'s. The `borrowBooks` mutation returns fields of `success` of type `Boolean`, `message` of `String` and `books` of type `Book`. Let's pass in the variable `$bookIds` into the input `bookIds` argument for `borrowBooks`.
+
+```graphql
+mutation CheckOutBooks($bookIds: [ID]) {
+  borrowBooks(bookIds: $bookIds) {
+    success
+    message
+    books {
+      _id
+      title
+    }
+  }
+}
+```
+
+Make sure to have the demo user's `token` in the `authorization` header when making this query.
+
+When we define mutations, we usually define if the mutation was successful or not, an optional message, and the array of objects that have been mutated. 
+
+Try doing the `returnBook` mutation on your own based on the above example (note: it only takes in a single `bookId`).
+
+Awesome! We just finished going through all the mutations!
+
 ## Additional Notes
 
 As you may have noticed and may have already tried to do, our schema architecture allows us to do crazy circular queries, like:
@@ -202,7 +235,7 @@ I would not suggest running this, but I'm sure some of you have already tried it
 
 ## Conclusion
 
-
+Queries and mutations give a lot of power to our client in determining what data we want to be sent from our server to our client. In future readings, we will be learning how to connect our client to our server using these GraphQL queries and mutations.
 
 [GraphQL Playground]: https://github.com/prisma-labs/graphql-playground
 [Book Lending Server Example]: https://github.com/ssoonmi/book-lending-server-example
