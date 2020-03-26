@@ -7,7 +7,7 @@ Now that we have learned how to create our GraphQL schema with type definitions 
 [GraphQL Playground] is an amazing GraphQL IDE that is much better than the built-in GraphQL IDE in the `express-graphql` package that we will be using to run GraphQL on our server. To follow along with this reading and play around and make your own queries and mutations, please do the following instructions:
 
 1. Create a MongoDB cluster or use a past cluster to create a MongoDB URI connection string
-2. Download this repository
+2. Download this repository [Book Lending Server Example]
 3. Run `npm install`
 4. Run `MONGO_URI="<your MongoDB URI connection string>" npm run seeds`
 5. Run `MONGO_URI="<your MongoDB URI connection string>" npm start`
@@ -205,4 +205,5 @@ I would not suggest running this, but I'm sure some of you have already tried it
 
 
 [GraphQL Playground]: https://github.com/prisma-labs/graphql-playground
+[Book Lending Server Example]: https://github.com/ssoonmi/book-lending-server-example
 [Securing Your GraphQL API from Malicious Queries]: https://blog.apollographql.com/securing-your-graphql-api-from-malicious-queries-16130a324a6b
