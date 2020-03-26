@@ -188,7 +188,7 @@ Now, let's check out some more books using the `borrowBooks` mutation. Take a lo
 Next, let's define a **named `mutation`** called `CheckOutBooks` that takes in the `$bookIds` variable and expect it to be an array of type `ID`'s. The `borrowBooks` mutation returns fields of `success` of type `Boolean`, `message` of `String` and `books` of type `Book`. Let's pass in the variable `$bookIds` into the input `bookIds` argument for `borrowBooks`.
 
 ```graphql
-mutation CheckOutBooks($bookIds: [ID]) {
+mutation CheckOutBooks($bookIds: [ID]!) {
   borrowBooks(bookIds: $bookIds) {
     success
     message
