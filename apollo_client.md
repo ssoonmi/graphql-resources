@@ -55,20 +55,22 @@ We will be using a React hook called `useQuery` from the `@apollo/react-hooks` p
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
-export default function BookList() {
-  const { data, loading, error } = useQuery(gql`
-    query GET_BOOKS {
-      books {
+const GET_BOOKS = gql`
+  query GET_BOOKS {
+    books {
+      _id
+      title
+      isBooked
+      author {
         _id
-        title
-        isBooked
-        author {
-          _id
-          name
-        }
+        name
       }
     }
-  `);
+  }
+`);
+
+export default function BookList() {
+  const { data, loading, error } = useQuery(GET_BOOKS);
   // ...
 }
 ```
