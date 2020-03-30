@@ -6,7 +6,7 @@ Apollo Client works with many different frontend frameworks including React.
 
 With Apollo Client, there is no need for Redux because there is a built-in cache that Apollo will use to store the information from GraphQL queries. There is also no more need for Redux container components. Instead, all of the information from our server that we will be using inside of components will be coming from our Apollo cache.
 
-![Image of GraphQL](https://ssoonmi.github.com/mern-graphql-curriculum/assets/graphql-with-store.png)
+![Image of GraphQL](assets/graphql-with-store.png)
 
 ## Making a Query
 
