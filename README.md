@@ -20,6 +20,8 @@
 
 ## 10. [Book Lending Client Project Part 3]
 
+## [Additional Resources]
+
 [Intro to GraphQL reading]: /introduction.md
 [Creating a GraphQL Schema]: /schema.md
 [GraphQL Resolvers]: /resolvers.md
@@ -30,3 +32,4 @@
 [Book Lending Client Project Part 1]: /book_lending_part1.md
 [Book Lending Client Project Part 2]: /book_lending_part2.md
 [Book Lending Client Project Part 3]: /book_lending_part3.md
+[Additional Resources]: /additional_resources.md
